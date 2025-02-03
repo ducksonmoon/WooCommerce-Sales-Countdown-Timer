@@ -1,0 +1,55 @@
+#sales-countdown-timer {
+  text-align: center;
+  padding: 10px;
+  direction: ltr;
+  white-space: nowrap;
+}
+
+.countdown-label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #d32f2f;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.countdown-display {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ff0000;
+}
+
+.countdown-display span {
+  padding: 0 5px;
+}
+
+/* Archive Page Countdown */
+.archive-sales-countdown-timer {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 12px;
+  z-index: 10;
+  text-align: center;
+  direction: ltr;
+  white-space: nowrap;
+}
+
+.archive-sales-countdown-timer .countdown-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #d32f2f;
+}
+
+.archive-sales-countdown-timer .countdown-display {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ff0000;
+}
+
+/* Ensure relative positioning for overlay */
+ul.products li.product,
+.single-product div.product div.images {
+  position: relative;
+}
