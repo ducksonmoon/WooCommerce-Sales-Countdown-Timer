@@ -6,6 +6,11 @@ Version: 1.0
 Author: Mehrshad Baqerzadegan
 Author URI: https://ducksonmoon.ir/
 Plugin URI: https://github.com/ducksonmoon/WooCommerce-Sales-Countdown-Timer
+Requires at least: 5.6
+Requires PHP: 7.2
+Tested up to: 6.2
+WC requires at least: 4.0
+WC tested up to: 8.0
 */
 
 if (!defined('ABSPATH')) {
