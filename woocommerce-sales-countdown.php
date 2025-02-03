@@ -5,7 +5,7 @@ Description: Adds a minimal sales countdown timer to WooCommerce product pages.
 Version: 1.0
 Author: Mehrshad Baqerzadegan
 Author URI: https://ducksonmoon.ir/
-Plugin URI: https://yourwebsite.com/woocommerce-sales-countdown
+Plugin URI: https://github.com/ducksonmoon/WooCommerce-Sales-Countdown-Timer
 */
 
 if (!defined('ABSPATH')) {
