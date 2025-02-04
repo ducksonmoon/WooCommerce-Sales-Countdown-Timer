@@ -6,11 +6,6 @@ Version: 1.0
 Author: Mehrshad Baqerzadegan
 Author URI: https://ducksonmoon.ir/
 Plugin URI: https://github.com/ducksonmoon/WooCommerce-Sales-Countdown-Timer
-Requires at least: 5.6
-Requires PHP: 7.2
-Tested up to: 6.2
-WC requires at least: 4.0
-WC tested up to: 8.0
 */
 
 if (!defined('ABSPATH')) {
@@ -38,14 +33,19 @@ function wc_display_sales_countdown() {
 
         // Format as YYYY-MM-DD HH:MM:SS
         $formatted_end_date = date('Y-m-d H:i:s', $local_time);
-        echo '<div id="sales-countdown-timer" data-end-date="' . esc_attr($formatted_end_date) . '">
-                <span class="countdown-label">پیشنهاد شگفت انگیز</span>
-
-                <div class="countdown-display">
-                    <span class="hours">00</span> :
-                    <span class="minutes">00</span> :
-                    <span class="seconds">00</span>
+        echo '<div class="archive-sales-countdown-container">
+               <div class="archive-sales-countdown-text">
+                    <h5>وقت خرید!</h5>
+               </div>
+                
+                <div class="archive-sales-countdown-timer" data-end-date="' . esc_attr($formatted_end_date) . '">
+                    <div class="countdown-display">
+                        <span class="hours">00</span> :
+                        <span class="minutes">00</span> :
+                        <span class="seconds">00</span>
+                    </div>
                 </div>
+
               </div>';
     }
 }
@@ -62,13 +62,19 @@ function wc_display_sales_countdown_archive() {
         $local_time = $sale_end + ($gmt_offset * HOUR_IN_SECONDS);
         $formatted_end_date = date('Y-m-d H:i:s', $local_time);
 
-        echo '<div class="archive-sales-countdown-timer" data-end-date="' . esc_attr($formatted_end_date) . '">
-        
-                <div class="countdown-display">
-                    <span class="hours">00</span> :
-                    <span class="minutes">00</span> :
-                    <span class="seconds">00</span>
+        echo '<div class="archive-sales-countdown-container">
+               <div class="archive-sales-countdown-text">
+                    <h5>وقت خرید!</h5>
+               </div>
+                
+                <div class="archive-sales-countdown-timer" data-end-date="' . esc_attr($formatted_end_date) . '">
+                    <div class="countdown-display">
+                        <span class="hours">00</span> :
+                        <span class="minutes">00</span> :
+                        <span class="seconds">00</span>
+                    </div>
                 </div>
+
               </div>';
     }
 }
