@@ -8,6 +8,8 @@ jQuery(document).ready(function ($) {
         let timeLeft = countdownDate - now;
 
         if (timeLeft <= 0) {
+          // Handle expiration
+          timerElement.html('<span class="expired-message">Sale Ended</span>');
           return;
         }
 
@@ -30,6 +32,10 @@ jQuery(document).ready(function ($) {
 
       updateCountdown(); // Initial call
       setInterval(updateCountdown, 1000); // Update every second
+    } else {
+      timerElement.html(
+        '<span class="no-end-date-message">Limited time offer!</span>'
+      );
     }
   }
 

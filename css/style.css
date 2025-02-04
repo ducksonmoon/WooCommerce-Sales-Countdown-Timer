@@ -2,6 +2,7 @@
   font-size: 16px;
   font-weight: 600;
   color: #ff0000;
+  direction: ltr;
 }
 
 .countdown-text h5 {
@@ -11,13 +12,21 @@
   margin-bottom: 10px;
 }
 
-.countdown-text p {
-  font-size: 14px;
-  margin: 5px 0 0;
-}
-
 .countdown-display span {
   padding: 0 5px;
+}
+
+.expired-message {
+  font-size: 16px;
+  font-weight: 700;
+  color: #d32f2f;
+}
+
+.no-end-date-message {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ff0000;
+  margin-bottom: 10px;
 }
 
 /* Archive Page Countdown */
@@ -29,26 +38,33 @@
   position: inherit;
 }
 
-.archive-sales-countdown-timer {
-  font-size: 18px;
-  font-weight: 600;
-  color: #ff0000;
-  direction: ltr;
-  white-space: nowrap;
-}
-
 .archive-sales-countdown-text {
   font-size: 14px;
   font-weight: 600;
   color: #333;
   margin-left: 20px;
+  text-wrap: nowrap;
 }
 
 /* Responsive design: Stack countdown and text vertically on small screens */
 @media (max-width: 768px) {
   .archive-sales-countdown-container {
+    flex-direction: column;
   }
-
+  .countdown-display {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .countdown-text  {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  h5{
+    margin-bottom: 0 !important;
+  }
   .archive-sales-countdown-text {
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 7px;
   }
 }
