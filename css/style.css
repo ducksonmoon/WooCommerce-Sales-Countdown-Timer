@@ -43,7 +43,17 @@
   font-weight: 600;
   color: #333;
   margin-left: 20px;
-  text-wrap: nowrap;
+}
+
+/* Placeholder for non-sale products */
+.archive-sales-countdown-placeholder {
+  visibility: hidden;
+  height: 50px; /* Same height as the countdown timer container */
+}
+
+/* For no-sale products, remove bottom border but maintain space */
+.archive-sales-countdown-container.no-sale {
+  border-bottom: 3px solid transparent;
 }
 
 /* Responsive design: Stack countdown and text vertically on small screens */
@@ -51,17 +61,21 @@
   .archive-sales-countdown-container {
     flex-direction: column;
   }
+
   .countdown-display {
     font-size: 12px;
     font-weight: 500;
   }
-  .countdown-text  {
-    font-size: 12px;
+
+  .countdown-text {
+    font-size: 14px;
     font-weight: 500;
   }
-  h5{
+
+  h5 {
     margin-bottom: 0 !important;
   }
+
   .archive-sales-countdown-text {
     font-size: 12px;
     font-weight: 500;

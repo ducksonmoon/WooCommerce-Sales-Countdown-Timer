@@ -2,7 +2,7 @@
 /*
 Plugin Name: WooCommerce Sales Countdown Timer (Enhanced)
 Description: Adds a minimal sales countdown timer to WooCommerce product and archive pages with fallback and expiration messages.
-Version: 1.1
+Version: 1.2
 Author: Mehrshad Baqerzadegan (Modified)
 Author URI: https://ducksonmoon.ir/
 Plugin URI: https://github.com/ducksonmoon/WooCommerce-Sales-Countdown-Timer
@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
 // Enqueue styles and scripts.
 function wc_sales_countdown_enqueue_scripts() {
     wp_enqueue_style('wc-sales-countdown-style', plugins_url('css/style.css', __FILE__));
-    wp_enqueue_script('wc-sales-countdown-js', plugins_url('js/countdown.js', __FILE__), array('jquery'), '1.1', true);
+    wp_enqueue_script('wc-sales-countdown-js', plugins_url('js/countdown.js', __FILE__), array('jquery'), '1.2', true);
 }
 add_action('wp_enqueue_scripts', 'wc_sales_countdown_enqueue_scripts');
 
@@ -31,18 +31,7 @@ function wc_display_sales_countdown($location = 'single') {
 
         $formatted_end_date = $local_time ? date('Y-m-d H:i:s', $local_time) : '';
 
-        // Display message based on whether there’s a sale end date or not
-        $countdown_html = $local_time ? 
-            '<div class="archive-sales-countdown-timer" data-end-date="' . esc_attr($formatted_end_date) . '">
-                <div class="countdown-display">
-                    <span class="days">00</span> :
-                    <span class="hours">00</span> :
-                    <span class="minutes">00</span> :
-                    <span class="seconds">00</span>
-                </div>
-             </div>' :
-            '<div class="no-end-date-message">پیشنهاد شگفت انگیز!</div>';
-
+        // Display countdown or fallback message based on end date availability
         echo $local_time ? '<div class="archive-sales-countdown-container">
                 <div class="archive-sales-countdown-text">
                     <h5>وقت خرید!</h5>
@@ -60,6 +49,11 @@ function wc_display_sales_countdown($location = 'single') {
                 '<div class="archive-sales-countdown-container">
                     <div class="no-end-date-message">پیشنهاد شگفت انگیز!</div>
                 </div>';
+    } else {
+        // No sale, show an empty placeholder to maintain layout consistency
+        echo '<div class="archive-sales-countdown-container no-sale">
+                <div class="archive-sales-countdown-placeholder"></div>
+              </div>';
     }
 }
 
