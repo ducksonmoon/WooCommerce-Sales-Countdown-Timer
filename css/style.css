@@ -29,6 +29,10 @@
   margin-bottom: 10px;
 }
 
+.red-color {
+  color: #ff0000;
+}
+
 /* Archive Page Countdown */
 .archive-sales-countdown-container {
   display: flex;
